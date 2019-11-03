@@ -4,6 +4,7 @@ import json
 from django.contrib.auth.decorators import login_required
 from board.models import FreePost
 from homework.models import Assignment
+from .models import Notice
 from accounts.models import MyUser, UserCode
 from .models import Notice
 
@@ -15,9 +16,9 @@ def news(request):
 
 @login_required(login_url='/')
 def index(request):
-    posts = FreePost.objects.all()
+    notice = Notice.objects.all()
     assignments = Assignment.objects.all()
-    return render(request, 'dash.html', {'posts':posts, 'assignments':assignments})
+    return render(request, 'dash.html', {'notice':notice, 'assignments':assignments})
 
 @login_required(login_url='/')
 def test(request):

@@ -10,10 +10,11 @@ Licence URI: https://www.os-templates.com/template-terms
 <html lang="ko">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-<title>UOS-OJ</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="/static/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+  <title>UOS-OJ</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="/static/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+  <link href="/static/layout/styles/caraslide.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body id="top">
 <div class="wrapper row0">
@@ -43,7 +44,7 @@ Licence URI: https://www.os-templates.com/template-terms
         </ul>
       </li>
 
-      <li><a href="{% url 'calendar' %}">대회/대외활동</a></li>
+      <li><a href="{% url 'calendar' %}">Events</a></li>
  
        <li><a class="drop" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> : {% if user.is_authenticated %}{{ user.username }} {%endif%}</a>
         <ul>
