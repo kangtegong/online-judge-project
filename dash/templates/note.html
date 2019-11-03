@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load hitcount_tags %}
+
+{% block content %}
+  <main class="hoc container clear"> 
+      
+    <h1>공지사항</h1>
+      <a href="{% url 'new' %}"><button type="button" class="btn btn-outline-primary">New</button></a>
+      <br><br>
+      <div class="scrollable">
+       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+
+                    <tr>
+                      <th width="35%">제목</th>
+                      <th width="17%">작성자</th>
+                      <th width="25%">작성일</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for note in notes%}
+                    <tr>
+                      <td><a href = "{% url 'note_detail' note.id %}" >{{note.title}}</a></td>
+                      {% if note.by_whom == True %}
+                      <td>학과공지</td>
+                      {% endif %}
+                      {% if note.by_whom == False %}
+                      <td>학생회공지</td>
+                      {% endif %}
+                      {% if note.by_whom == None %}
+                      <td>기타공지</td>
+                      {% endif %}
+
+                      <td>{{note.date}}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+
+                {% if is_paginated %} 
+                  {% if page_obj.has_previous %} 
+                    <a href="?page={{ page_obj.previous_page_number }}"><span>Prev</span></a> 
+                  {% endif %} 
+                  
+                  {% if page_obj.has_next %} 
+                    <a href="?page={{ page_obj.next_page_number }}"><span>Next</span></a> 
+                  {% endif %} 
+                {% endif %}                
+    </main>
+
+
+
+{% endblock %}

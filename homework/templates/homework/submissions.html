@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- DataTales Example -->
+ <main class="hoc container clear">    
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">내가 제출한 과제목록</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th width="10%">수업</th>
+                      <th width="10%">과제명</th>
+                      <th width="20%">제목</th>
+                      <th width="10%">작성자</th>
+                      <th width="15%">제출일자</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  
+                  <!-- 제출과제 목록 -->
+                       {% for submit in submitfiles %}
+                   <tr> 
+             
+                    {% if user.group == "Student" %}
+                        {%  if user == submit.author %}
+                       <!-- 학생 : 본인이 제출한 과제 기준 필터링 -->
+                      
+                      <td>{{submit.assignment.class_choice}} </td>
+                      <td>{{submit.assignment}} </td>
+                      <td><a href="{% url 'filedetail' submit.pk %}">  {{submit.title}}   </a></td>
+                      <td>{{submit.author.realname}} </td>
+                      <td>{{submit.created_at }}  </td>
+                        {% endif %}
+                    {% endif %}
+              
+                    <!-- 교수님 : 수업 기준 필터링 -->
+                    {% if user.group == "Professor" %}
+                        {%  if user.myclass %}
+                      <td>{{submit.assignment.class_choice}} </td>
+                      <td>{{submit.assignment}} </td>                      
+                      <td><a href="{% url 'filedetail' submit.pk %}">{{submit.title}}   </td>
+                      <td>{{submit.author.realname}} </td>
+                      <td>{{submit.created_at }}  </td>
+                        {% endif %}
+                    {% endif %}                    
+                        {% endfor %}
+                    </tr>
+                                              
+                    <!-- 코드 과제 목록-->    
+                        {% for submit in codefiles %}  
+                    <tr>
+                    {% if user.group == "Student" %}
+                        {%  if user == submit.author %}
+                       <!-- 학생 : 본인이 제출한 과제 기준 필터링 -->
+                      <td>{{submit.assignment.class_choice}} </td>
+                      <td>{{submit.assignment}} </td>
+                      <td><a href="{% url 'codedetail' submit.pk %}">{{submit.title}} </a></td>
+                      <td>{{submit.author.realname}} </td>
+                      <td>{{submit.created_at }}  </td>
+                        {% endif %}
+                    {% endif %}
+              
+                    <!-- 교수님 : 수업 기준 필터링 -->
+                    {% if user.group == "Professor" %}
+                        {%  if user.myclass %}
+                      <td>{{submit.assignment.class_choice}} </td>
+                      <td>{{submit.assignment}} </td>
+                      <td><a href="{% url 'codedetail' submit.pk %}">{{submit.title}}   </td>
+                      <td>{{submit.author.realname}} </td>
+                      <td>{{submit.created_at }}  </td>
+                        {% endif %}
+                    {% endif %}                    
+                        {% endfor %}
+                    </tr>
+
+                    </tr>              
+                  </tbody>
+                </table>
+  
+              </div>
+                  {% if is_paginated %} 
+                      {% if page_obj.has_previous %} 
+                          <a href="?page={{ page_obj.previous_page_number }}"> 
+                              <span>Prev</span> 
+                          </a> 
+                      {% endif %} 
+                  
+                      {% if page_obj.has_next %} 
+                          <a href="?page={{ page_obj.next_page_number }}"> 
+                              <span>Next</span> 
+                          </a> 
+                      {% endif %} 
+                  {% endif %}    
+            </div>
+          
+          </div>
+</main>
+{% endblock %}

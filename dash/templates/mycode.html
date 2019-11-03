@@ -1,0 +1,12 @@
+{% extends 'userbase.html' %}
+{% block usercontent %}
+<div class="p-5">
+  <div class="text-center">
+    <h1 class="h4 text-gray-900 mb-4">My Code</h1>
+  </div><br/>
+    {% for code in codes %}
+      <a href="{{code.mycode}}">{{code.title}}</a><br/>
+    {%endfor%}
+    <hr>
+{% endblock %}
+           

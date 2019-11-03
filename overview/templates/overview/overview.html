@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="hoc container clear"> 
+
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h2 class="m-0 font-weight-bold text-primary">{{sn}}</h2>
+        </div>
+            <div class="card-body">
+                <h5>{{cn}}, {{pn}}</h5>
+                <hr>
+                <h4><strong>교과목표</strong> : {{goal}}</h4>
+                <p> {{desc}} </p>
+                주 {{week}}시간 수업<br/>
+
+                교수님 연락처 : {{tel}}<br/>
+                성적 산출 방식 <br/>
+                {% for score in scores %}
+                    {{score}}<br/>
+                {% endfor%}
+                {{book}}
+
+                <br/>
+                
+        </div>
+</main>
+{% endblock %}
+
+

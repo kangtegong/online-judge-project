@@ -1,0 +1,24 @@
+{% extends "django_comments_xtd/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<main class="hoc container clear"> 
+<div class="mb-4">
+    <h3 class="text-center">{% trans "Comment confirmation requested." %}</h3>
+    <hr/>
+</div>
+<div class="row justify-content-center flex-fill">
+    <div class="col-md-7">
+        <p class="lead text-center">
+            {% blocktrans %}A confirmation message has been sent to your
+            email address. Please, click on the link in the message to confirm
+            your comment.{% endblocktrans %}
+        </p>
+        <p class="pt-5 text-center">
+            <!-- Redirect To detail Page -->
+            Go back to: <a href="{% url 'detail' freepost.id %}">{{ target }}</a>
+        </p>
+    </div>
+</div>
+</main
+{% endblock %}

@@ -1,0 +1,67 @@
+// Cards Carousel
+// ----------------------------------------------
+
+.icon-cards {
+	position: absolute;
+  top: 50%;
+  left: 50%;
+	width: 190px;
+	height: 210px;
+  margin: 0;
+	perspective: 800px;
+  transform: translate(-50%,-50%);
+
+	// This is the element that rotates with the animation
+
+	&__content {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		transform-style: preserve-3d;
+		transform: translateZ(-182px) rotateY(0);
+		animation: carousel 10s infinite cubic-bezier(1,.015,.295,1.225) forwards;
+	}
+
+	// Individual cards
+
+	&__item {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 190px;
+		height: 210px;
+		border-radius: 6px;
+
+		&:nth-child(1) {
+			background: rgba(252,192,77,.9);
+			transform: rotateY(0) translateZ(182px);
+		}
+
+		&:nth-child(2) {
+			background: rgba(49,192,204,.9);
+			transform: rotateY(120deg) translateZ(182px);
+		}
+
+		&:nth-child(3) {
+			background: rgba(236,233,242,.9);
+			transform: rotateY(240deg) translateZ(182px);
+		}
+	}
+}
+
+// Carousel animation
+
+@keyframes carousel {
+	0%,  17.5%  { transform: translateZ(-182px) rotateY(0); }
+	27.5%, 45%  { transform: translateZ(-182px) rotateY(-120deg); }
+	55%, 72.5%  { transform: translateZ(-182px) rotateY(-240deg); }
+	82.5%, 100% { transform: translateZ(-182px) rotateY(-360deg); }
+}
+
+
+// Demo only
+// ----------------------------------------------
+
+body {
+	background: rgba(32,33,38,1);
+}

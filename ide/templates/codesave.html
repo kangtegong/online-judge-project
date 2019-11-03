@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="hoc container clear"> 
+                   
+    <div id="comments">
+        <h2>Code 저장</h2>
+        <form action="{% url 'codesave' %}" method="post">
+            {% csrf_token %} 
+            {{form.media}}
+          
+            <label required >About This Code</label>
+            {{form.title}}
+          <div class="one_third first">
+            <label required >Code URL</label>
+            {{form.mycode}}
+          </div>
+
+          <div class="block clear"></div>
+          <div>
+            <input type = "submit" class="btn btn-outline-primary" value ="추가하기" onclick="return confirm('코드 저장 완료')">
+          </div>
+        </form>
+      </div>   
+</main>
+{% endblock %}
+
+

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="hoc container clear"> 
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">제출과제</h6>
+        </div>
+      
+        <div class="card-body">
+            <div class="table-responsive">
+
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th width="20%">{{object.assignment}}</th>
+                      <th width="15%">{{object.expiration_date}}</th>
+                      <th width="15%">{{object.author}}</th>
+                      <th width="15%">제출일 : {{object.created_at}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td colspan="4">
+                            {{object.myfile | safe}}
+                            <!-- BaseURL + media/filesubmit/ " 제출날짜 + 파일이름"-->
+                            <a href="http://127.0.0.1:8000/media/{{object.myfile}}" download>다운로드</a>
+                            {{object.body | safe}}
+                        </td>
+                    <tr>
+                  </tbody>
+                </table>
+      
+            </div>
+        </div>
+</main>
+  
+{% endblock %}
+
+            

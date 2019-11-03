@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="hoc container clear"> 
+                   
+    <div id="comments">
+        <h2>새 글 입력</h2>
+        <form action="#" method="post">
+            {% csrf_token %} 
+            {{form.media}}
+          
+          <div class="one_third first">
+            <label required >Name</label>
+            <input type="text" name="title" size="200" maxlength="100" required id="id_title" />
+          </div>
+
+          <div class="block clear">
+            {{form.body | safe}}
+          </div>
+          <div>
+            <input type = "submit" class="btn btn-outline-primary" value ="추가하기" onclick="return confirm('새 글이 등록되었습니다')">
+          </div>
+        </form>
+      </div>   
+</main>
+{% endblock %}
+
+

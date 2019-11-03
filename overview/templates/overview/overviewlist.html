@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="hoc container clear"> 
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">수업계획서</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+
+                    <tr>
+                      <th width="7%">학수번호</th>
+                      <th width="22%">수업명</th>
+                      <th width="5%">분반</th>
+                      <th width="5%">학년</th>
+                      <th width="10%">교수님</th>
+                      <th width="27%">시간/장소</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for elem in object_list%}
+                   <tr>
+                      <td>{{elem.subject_no}}</td>
+                      <td><a href = "{% url 'getClass' elem.subject_no %}" >{{elem.subject_nm}}</a></td>
+                      <td>{{elem.class_div}}</td>
+                      <td>{{elem.shyr}}</td>
+                      <td>{{elem.prof_nm}}</td>
+                      <td>{{elem.class_nm}}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+                  {% if is_paginated %} 
+                      {% if page_obj.has_previous %} 
+                          <a href="?page={{ page_obj.previous_page_number }}"> 
+                              <span>Prev</span> 
+                          </a> 
+                      {% endif %} 
+                  
+                      {% if page_obj.has_next %} 
+                          <a href="?page={{ page_obj.next_page_number }}"> 
+                              <span>Next</span> 
+                          </a> 
+                      {% endif %} 
+                  {% endif %}    
+            </div>
+          </div>
+</main>
+{% endblock %}

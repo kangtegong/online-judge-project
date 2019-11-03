@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<script type="text/javascript" src="/my_admin/jsi18n/"></script>
+<script type="text/javascript" src="/media/admin/js/core.js"></script>
+<script>
+function homework_register() {
+	alert("과제 등록이 완료되었습니다.");
+}
+</script>
+<main class="hoc container clear"> 
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <form method='POST'>
+                <div class="form-group">
+                    {% csrf_token %}
+                    <label>과제 개설</label>
+                    {{form.media}}
+                    {{form.as_p | safe}}
+                    <input type = "submit" class="btn btn-outline-primary" value ="추가하기" onclick="homework_register();">
+                </div>
+                
+            </form>    
+        </div>
+    </div>
+</div>    
+</main>
+
+{% endblock %}
+
+

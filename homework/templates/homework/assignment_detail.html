@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="hoc container clear"> 
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">과제보기</h6>
+        </div>
+      
+        <div class="card-body">
+            <div class="table-responsive">
+
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+
+                    <tr>
+                      <th width="20%">{{object.title}}</th>
+                      <th width="15%">{{object.expiration_date}}</th>
+                      <th width="15%">{{object.created_at}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td colspan="3">
+                            {{object.body | safe}}
+                        </td>
+                    <tr>
+                  </tbody>
+                </table>
+            {% if user.group == "Student" %}
+                {% if object.hw_type == "CODE" %}
+                  <a href="{% url 'codereview' %}"><button type="button" class="btn btn-outline-primary">과제수행</button></a>
+                {% elif object.hw_type == "FILE" %}
+                  <a href="{% url 'filehw' %}"><button type="button" class="btn btn-outline-primary">과제수행</button></a>
+                {% else %}
+                  <a href="{% url 'mailhw' %}"><button type="button" class="btn btn-outline-primary">과제수행</button></a>
+                {% endif %}
+            {% elif user.group == "Professor" %}
+                  <a href="{% url 'submissions' %}"><button type="button" class="btn btn-outline-primary">제출목록</button></a>
+            {% endif %}
+            </div>
+        </div>
+</main>
+  
+{% endblock %}
+
+            

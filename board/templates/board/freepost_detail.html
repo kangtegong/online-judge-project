@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load hitcount_tags %}
+{% load comments %}
+{% load comments_xtd %}
+
+{% block content %}
+<main class="hoc container clear"> 
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h2 class="m-0 font-weight-bold text-primary">{{object.title}}</h2>
+        </div>
+            <div class="card-body">
+                <h5>{{object.created_at}}</h5>
+                <h6>Views : {% get_hit_count for freepost %}</h6>
+                {% get_comment_count for object as comment_count %}
+                {{ comment_count }} comment{{ comment_count|pluralize }}
+                <hr>
+
+                <br/>
+                <p> {{object.body | safe }} </p>
+
+            {% if user == freepost.author %}
+                <a href = "{% url 'change' freepost.id %}" ><button type="button" class="btn btn-outline-primary">수정</button></a>
+                <a href = "{% url 'del' freepost.id %}" ><button type="button" class="btn btn-outline-primary">삭제</button></a>            
+            {% endif %}
+
+<br/><br/><br/><hr>
+
+<!-- Comment List -->
+{% if comment_count %}
+  <div id="comments">
+    <h2>Comments</h2>
+        <ul>
+          <li>
+            {% render_xtdcomment_tree for object %}
+          </li>
+        </ul>
+<!-- Comment Form -->
+<h2>LEAVE COMMENTS</h2>
+{% render_comment_form for object %}
+  </div>   
+</div>
+{% endif %}
+
+    </div>
+
+</main>
+{% endblock %}
+

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="content"> 
+      <!-- ################################################################################################ -->
+      <div id="gallery">
+        <figure>
+          <header class="heading">Developer News</header>
+          <ul class="nospace clear">    
+            {% for data in api.Data %}
+            {% if forloop.counter|divisibleby:4 %}
+            <li class="one_quarter first">
+                <a>
+                    <img src="{{data.imageurl}}" alt="{{ data.source }}">
+                    <h6>{{ data.title }}</h6>
+                    <p> {{ data.body|truncatechars:50 }} </p>
+                </a>
+                <button href="{{data.url}}">More</button>
+            </li>
+            {% else %}
+            <li class="one_quarter">
+                <a>
+                    <img src="{{data.imageurl}}" alt="{{ data.source }}">
+                    <h6>{{ data.title }}</h6>
+                    <p> {{ data.body|truncatechars:50 }} </p>
+                </a>
+                <button href="{{data.url}}">More</button>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </figure>
+      </div>
+      <!-- ################################################################################################ -->
+      <!-- ################################################################################################ -->
+
+      {% if is_paginated %}
+      <nav class="pagination">
+        <ul>
+          {% if page_obj.has_previous %}
+          <li><a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a></li>
+          {% endif %}
+
+          {% if page_obj.has_next %} 
+          <li><a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+      {% endif %}
+      <!-- ################################################################################################ -->
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- / main body -->
+    <div class="clear"></div>
+  </main>
+</div>
+
+
+{% endblock %}

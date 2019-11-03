@@ -1,0 +1,90 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--
+Template Name: Jovaphile
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="ko">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>UOS-OJ</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="/static/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<div class="wrapper row0">
+  <nav id="mainav" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="clear">
+      <li class="active"><a href="{% url 'index' %}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+      <li><a class="drop" href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> Board</a>
+        <ul>
+          <li><a href="{% url 'note' %}">공지사항</a></li>
+          <li><a href="{% url 'freeboardlist' %}">QnA</a></li>
+          <li><a href="{% url 'news' %}">개발자뉴스</a></li>
+        </ul>
+      </li>
+      
+      <li><a class="drop" href="#"><i class="fa fa-code" aria-hidden="true"></i> Code</a>
+        <ul>
+          <li><a href="{% url 'ftz' %}">Free Training Zone</a></li>
+          <li><a href="{% url 'probset' %}">Algorithm (Theme)</a></li>
+        </ul>
+      
+      <li><a class="drop" href="#"><i class="fa fa-graduation-cap" aria-hidden="true"></i> COURSE</a>
+        <ul>
+          <li><a href="{% url 'overviewlist' %}">수업계획서</a></li>
+          <li><a href="{% url 'courselist' %}">과제제출</a></li>
+          <li><a href="{% url 'classregister' %}">수강신청</a></li>
+        </ul>
+      </li>
+
+      <li><a href="{% url 'calendar' %}">대회/대외활동</a></li>
+ 
+       <li><a class="drop" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> : {% if user.is_authenticated %}{{ user.username }} {%endif%}</a>
+        <ul>
+          <li><a href="{% url 'profile' %}">Profile</a></li>
+          <li><a href="{% url 'myclass' %}">My Class</a></li>
+          <li><a href="{% url 'mycode' %}">My Code</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+      </li>
+          
+    </ul>
+  </nav>
+</div>
+
+<div class="wrapper bgded overlay light" style="background-image:url('images/demo/backgrounds/01.png');">
+
+</div>
+<div class="wrapper row3">
+
+        {% block content %}
+
+        {% endblock %}
+
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="/static/layout/scripts/jquery.min.js"></script>
+<script src="/static/layout/scripts/jquery.backtotop.js"></script>
+<script src="/static/layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

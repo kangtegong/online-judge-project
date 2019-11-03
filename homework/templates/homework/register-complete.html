@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="hoc container clear"> 
+    <h1>수강신청완료</h1>
+        <h4>현재 수강 중인 강좌</h4>
+            <br/>
+                {% for class in user.myclass.all %}
+                {{class}}<br/><br/>
+                {%endfor%}
+                <a href = "{% url 'classregister' %}"> 뒤로가기</a>
+
+
+                {% if is_paginated %} 
+                    {% if page_obj.has_previous %} 
+                    <a href="?page={{ page_obj.previous_page_number }}"> 
+                        <span>Prev</span> 
+                    </a> 
+                    {% endif %}   
+                    {% if page_obj.has_next %} 
+                    <a href="?page={{ page_obj.next_page_number }}"> 
+                        <span>Next</span> 
+                    </a> 
+                    {% endif %} 
+                {% endif %}    
+</main>
+{% endblock %}
+
+
+

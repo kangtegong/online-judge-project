@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="hoc container clear"> 
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <form method="POST" action="" enctype="multipart/form-data">
+                <div class="form-group">
+                    {% csrf_token %}
+                    <label>Code 제출</label>
+                    {{form.media}}
+                    {{form.as_p | safe}}
+                    <input type = "submit" class="btn btn-outline-primary" value ="Submit">
+                </div>
+            </form>    
+        </div>
+    </div>
+</div>    
+</main>
+{% endblock %}
