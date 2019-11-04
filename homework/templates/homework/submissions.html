@@ -5,7 +5,7 @@
  <main class="hoc container clear">    
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">내가 제출한 과제목록</h6>
+            <h6 class="m-0 font-weight-bold text-primary">제출 과제목록</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -20,33 +20,32 @@
                     </tr>
                   </thead>
                   <tbody>
-                  
                   <!-- 제출과제 목록 -->
+                  이 두 개가 같으면 될 듯 {{assignment.title}} | {% for submit in submitfiles %} {{submit.assignment.title}} {%endfor %}
                        {% for submit in submitfiles %}
                    <tr> 
-             
                     {% if user.group == "Student" %}
-                        {%  if user == submit.author %}
-                       <!-- 학생 : 본인이 제출한 과제 기준 필터링 -->
-                      
+                        {% if assignment.title == submit.assignment.title %}
+                        <!-- 학생 : 본인이 제출한 과제 기준 필터링 -->
                       <td>{{submit.assignment.class_choice}} </td>
                       <td>{{submit.assignment}} </td>
                       <td><a href="{% url 'filedetail' submit.pk %}">  {{submit.title}}   </a></td>
                       <td>{{submit.author.realname}} </td>
                       <td>{{submit.created_at }}  </td>
-                        {% endif %}
+                      {% endif %}
                     {% endif %}
               
                     <!-- 교수님 : 수업 기준 필터링 -->
                     {% if user.group == "Professor" %}
-                        {%  if user.myclass %}
-                      <td>{{submit.assignment.class_choice}} </td>
+                        {% if assignment.title == submit.assignment.title %}
+                      <td>{{submit.assignment.class_choice}}</td>
                       <td>{{submit.assignment}} </td>                      
                       <td><a href="{% url 'filedetail' submit.pk %}">{{submit.title}}   </td>
                       <td>{{submit.author.realname}} </td>
                       <td>{{submit.created_at }}  </td>
                         {% endif %}
                     {% endif %}                    
+
                         {% endfor %}
                     </tr>
                                               
@@ -54,26 +53,28 @@
                         {% for submit in codefiles %}  
                     <tr>
                     {% if user.group == "Student" %}
-                        {%  if user == submit.author %}
+                        {% if assignment.title == submit.assignment.title %}                      
                        <!-- 학생 : 본인이 제출한 과제 기준 필터링 -->
                       <td>{{submit.assignment.class_choice}} </td>
                       <td>{{submit.assignment}} </td>
                       <td><a href="{% url 'codedetail' submit.pk %}">{{submit.title}} </a></td>
                       <td>{{submit.author.realname}} </td>
                       <td>{{submit.created_at }}  </td>
-                        {% endif %}
+                      {% endif %}
                     {% endif %}
               
                     <!-- 교수님 : 수업 기준 필터링 -->
                     {% if user.group == "Professor" %}
-                        {%  if user.myclass %}
+                        {% if assignment.title == submit.assignment.title %}
                       <td>{{submit.assignment.class_choice}} </td>
                       <td>{{submit.assignment}} </td>
                       <td><a href="{% url 'codedetail' submit.pk %}">{{submit.title}}   </td>
                       <td>{{submit.author.realname}} </td>
                       <td>{{submit.created_at }}  </td>
-                        {% endif %}
+                      {% endif %}
                     {% endif %}                    
+
+
                         {% endfor %}
                     </tr>
 
@@ -82,19 +83,19 @@
                 </table>
   
               </div>
-                  {% if is_paginated %} 
-                      {% if page_obj.has_previous %} 
-                          <a href="?page={{ page_obj.previous_page_number }}"> 
-                              <span>Prev</span> 
-                          </a> 
-                      {% endif %} 
+              {% if is_paginated %} 
+                {% if page_obj.has_previous %} 
+                  <a href="?page={{ page_obj.previous_page_number }}"> 
+                    <span>Prev</span> 
+                  </a> 
+                {% endif %} 
                   
-                      {% if page_obj.has_next %} 
-                          <a href="?page={{ page_obj.next_page_number }}"> 
-                              <span>Next</span> 
-                          </a> 
-                      {% endif %} 
-                  {% endif %}    
+                {% if page_obj.has_next %} 
+                  <a href="?page={{ page_obj.next_page_number }}"> 
+                    <span>Next</span> 
+                  </a> 
+                {% endif %} 
+              {% endif %}    
             </div>
           
           </div>

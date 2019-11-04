@@ -30,13 +30,16 @@
             {% if user.group == "Student" %}
                 {% if object.hw_type == "CODE" %}
                   <a href="{% url 'codereview' %}"><button type="button" class="btn btn-outline-primary">과제수행</button></a>
+                  <a href="{% url 'submissions' object.pk %}"><button type="button" class="btn btn-outline-primary">제출목록</button></a>
                 {% elif object.hw_type == "FILE" %}
                   <a href="{% url 'filehw' %}"><button type="button" class="btn btn-outline-primary">과제수행</button></a>
+                  <a href="{% url 'submissions' object.pk %}"><button type="button" class="btn btn-outline-primary">제출목록</button></a>
                 {% else %}
                   <a href="{% url 'mailhw' %}"><button type="button" class="btn btn-outline-primary">과제수행</button></a>
+                  <a href="{% url 'submissions' object.pk %}"><button type="button" class="btn btn-outline-primary">제출목록</button></a>
                 {% endif %}
             {% elif user.group == "Professor" %}
-                  <a href="{% url 'submissions' %}"><button type="button" class="btn btn-outline-primary">제출목록</button></a>
+                  <a href="{% url 'submissions' object.pk %}"><button type="button" class="btn btn-outline-primary">제출목록</button></a>
             {% endif %}
             </div>
         </div>

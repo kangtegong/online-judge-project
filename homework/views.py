@@ -11,7 +11,6 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='/')
 def hwlist(request, pk):
-    # 특정 pk 값에 해당하는 과제만 내보내고 싶은데
     course = get_object_or_404(Course, pk=pk)
     assignments = course.assignment_set.all()
 
@@ -46,7 +45,7 @@ class CodeSubmits(LoginRequiredMixin, CreateView):
     model = CodeSubmit
     fields = ['assignment', 'title', 'codeurl', 'code' ]
     template_name = 'homework/code-submit.html'
-    success_url = reverse_lazy('submissions')
+    success_url = reverse_lazy('courselist')
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -57,9 +56,8 @@ class FileSubmits(LoginRequiredMixin, CreateView):
     redirect_field_name = '/'
     model = FileSubmit
     template_name = 'homework/file.html'
-    # FileSubmit.assignment = FileSubmit.pk
     fields = ['assignment','title', 'myfile', 'body']
-    success_url = reverse_lazy('submissions')
+    success_url = reverse_lazy('courselist')
     
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -75,24 +73,32 @@ class MailSubmits(LoginRequiredMixin, CreateView):
 
 @login_required(login_url='/')
 def submitlist(request, pk):
-    # 특정 pk 값에 해당하는 과제만 내보내고 싶은데
+    # 넘어오는 pk값은 Assignment의 pk
+    # 특정 pk 값에 해당하는 과제만 내보내고 싶은데 흠
+    # Assignment의 pk가 있고 FileSubmit, CodeSubmit의 pk
     assignment = get_object_or_404(Assignment, pk=pk)
-    all_assignments = assignment.assignment_set.all()
-
-    return render(request, 'homework/submissions.html', {'all_assignments': all_assignments})
-
+    submitfiles = FileSubmit.objects.all()
+    codefiles = CodeSubmit.objects.all()
+    
+    return render(request, 'homework/submissions.html', {
+        'assignment': assignment, 
+        'submitfiles':submitfiles, 
+        'codefiles':codefiles
+        })
+    
+'''
 class SubmitList(ListView):
-    context_object_name = 'submitfiles'    
+    context_object_name = 'submitfiles'    # 제출 과제 object 이름
     template_name = 'homework/submissions.html'
     queryset = FileSubmit.objects.all()
     paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super(SubmitList, self).get_context_data(**kwargs)
-        context['codefiles'] = CodeSubmit.objects.all()
-        context['course'] = Course.objects.all()
+        context['codefiles'] = CodeSubmit.objects.all() 
+        context['assignment'] = Assignment.objects.all()
         return context
-
+'''
 class ClassRegister(LoginRequiredMixin, ListView):
     login_url = '/'
     redirect_field_name = '/'

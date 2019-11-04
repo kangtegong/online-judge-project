@@ -11,7 +11,8 @@ urlpatterns = [
     path('coderv', views.codereview, name="codereview"),
     path('filehw', views.FileSubmits.as_view(), name="filehw"),
     path('mailhw', views.MailSubmits.as_view(), name="mailhw"),
-    path('submissions', views.SubmitList.as_view(), name="submissions"),
+    # path('submissions', views.SubmitList.as_view(), name="submissions"),
+    path('sumbissions/<int:pk>', views.submitlist, name="submissions"),
 
     path('classregister', views.ClassRegister.as_view(), name="classregister"),
     path('registerclass/<int:pk>', views.registerclass, name="registerclass"),

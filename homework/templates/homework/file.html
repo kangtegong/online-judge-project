@@ -10,7 +10,7 @@
                     <label>제출 과제</label>
                     {{form.media}}
                     {{form.as_p | safe}}
-                    <input type = "submit" class="btn btn-outline-primary" value ="Submit">
+                    <input type = "submit" class="btn btn-outline-primary" value ="Submit" onclick="return confirm('과제등록이 완료되었습니다.')">
                 </div>
             </form>    
         </div>
