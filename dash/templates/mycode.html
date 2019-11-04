@@ -5,7 +5,9 @@
     <h1 class="h4 text-gray-900 mb-4">My Code</h1>
   </div><br/>
     {% for code in codes %}
+      {% if code.user == request.user %}
       <a href="{{code.mycode}}">{{code.title}}</a><br/>
+      {% endif %}
     {%endfor%}
     <hr>
 {% endblock %}

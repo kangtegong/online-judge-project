@@ -12,9 +12,9 @@ function homework_register() {
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <form method='POST'>
-                <div class="form-group">
+                <div class="form-group" id="comments">
                     {% csrf_token %}
-                    <label>과제 개설</label>
+                    <h1>과제 개설</h1>
                     {{form.media}}
                     {{form.as_p | safe}}
                     <input type = "submit" class="btn btn-outline-primary" value ="추가하기" onclick="homework_register();">

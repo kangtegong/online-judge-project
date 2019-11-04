@@ -5,9 +5,9 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <form method="POST" action="" enctype="multipart/form-data">
-                <div class="form-group">
+                <div class="form-group" id="comments">
                     {% csrf_token %}
-                    <label>Code 제출</label>
+                    <h1>Code 제출</h1>
                     {{form.media}}
                     {{form.as_p | safe}}
                     <input type = "submit" class="btn btn-outline-primary" value ="Submit" onclick="return confirm('과제등록이 완료되었습니다.')">

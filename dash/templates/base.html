@@ -22,7 +22,7 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
     <ul class="clear">
       <li class="active"><a href="{% url 'index' %}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-      <li><a class="drop" href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> Board</a>
+      <li><a class="drop" href="{% url 'freeboardlist' %}"><i class="fa fa-comments-o" aria-hidden="true"></i> Board</a>
         <ul>
           <li><a href="{% url 'note' %}">공지사항</a></li>
           <li><a href="{% url 'freeboardlist' %}">QnA</a></li>
@@ -30,13 +30,13 @@ Licence URI: https://www.os-templates.com/template-terms
         </ul>
       </li>
       
-      <li><a class="drop" href="#"><i class="fa fa-code" aria-hidden="true"></i> Code</a>
+      <li><a class="drop" href="{% url 'ftz' %}"><i class="fa fa-code" aria-hidden="true"></i> Code</a>
         <ul>
           <li><a href="{% url 'ftz' %}">Free Training Zone</a></li>
           <li><a href="{% url 'probset' %}">Algorithm (Theme)</a></li>
         </ul>
       
-      <li><a class="drop" href="#"><i class="fa fa-graduation-cap" aria-hidden="true"></i> COURSE</a>
+      <li><a class="drop" href="{% url 'overviewlist' %}"><i class="fa fa-graduation-cap" aria-hidden="true"></i> COURSE</a>
         <ul>
           <li><a href="{% url 'overviewlist' %}">수업계획서</a></li>
           <li><a href="{% url 'courselist' %}">과제제출</a></li>
@@ -46,7 +46,7 @@ Licence URI: https://www.os-templates.com/template-terms
 
       <li><a href="{% url 'calendar' %}">Events</a></li>
  
-       <li><a class="drop" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> : {% if user.is_authenticated %}{{ user.username }} {%endif%}</a>
+       <li><a class="drop" href="{% url 'profile' %}"><i class="fa fa-user-circle" aria-hidden="true"></i> : {% if user.is_authenticated %}{{ user.username }} {%endif%}</a>
         <ul>
           <li><a href="{% url 'profile' %}">Profile</a></li>
           <li><a href="{% url 'myclass' %}">My Class</a></li>
