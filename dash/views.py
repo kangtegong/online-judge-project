@@ -4,7 +4,7 @@ import json
 from django.contrib.auth.decorators import login_required
 from board.models import FreePost
 from homework.models import Assignment
-from .models import Notice
+from .models import Notice, ExtraCurricular
 from accounts.models import MyUser, UserCode
 from .models import Notice
 
@@ -45,7 +45,8 @@ def myclass(request):
 
 @login_required(login_url='/')
 def calendar(request):
-    return render(request, 'calendar.html')
+    extra = ExtraCurricular.objects.all()
+    return render(request, 'calendar.html', {'extra':extra})
 
 @login_required(login_url='/')
 def mycode(request):
