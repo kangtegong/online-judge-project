@@ -1,1 +1,45 @@
-대외활동
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- DataTales Example -->
+<main class="hoc container clear">    
+  <h1>알고리즘/CTF 대회일정</h1>
+    <br/>
+    <div class="scrollable">
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FSeoul&amp;src=a28uc291dGhfa29yZWEjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=aXUxaXVsMXUzbjhpYzNzNzhmNGRmMTV1NG9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=Y3RmdGltZUBnbWFpbC5jb20&amp;color=%230B8043&amp;color=%23009688&amp;color=%238E24AA" style="border-width:0" width="1000" height="750" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <br/>
+  
+  <h1>모집중인 대외활동</h1>
+
+      <div class="scrollable">
+       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+
+                    <tr>
+                      <th width="35%">제목</th>
+                      <th width="25%">모집기한</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>이름</td>
+                      <td>모집기한</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                {% if is_paginated %} 
+                  {% if page_obj.has_previous %} 
+                    <a href="?page={{ page_obj.previous_page_number }}"><span>Prev</span></a> 
+                  {% endif %} 
+                  
+                  {% if page_obj.has_next %} 
+                    <a href="?page={{ page_obj.next_page_number }}"><span>Next</span></a> 
+                  {% endif %} 
+                {% endif %}                
+
+
+</main>
+
+{% endblock %}
