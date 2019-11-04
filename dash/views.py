@@ -49,6 +49,11 @@ def calendar(request):
     return render(request, 'calendar.html', {'extra':extra})
 
 @login_required(login_url='/')
+def event(request, event_pk):
+    event = get_object_or_404(ExtraCurricular, pk=event_pk)
+    return render(request, 'event.html', {'event':event})
+
+@login_required(login_url='/')
 def mycode(request):
     codes = UserCode.objects.all()
     return render(request, 'mycode.html', {'codes':codes})

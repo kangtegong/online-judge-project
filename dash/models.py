@@ -25,5 +25,12 @@ class ExtraCurricular(models.Model):
     title = models.CharField(max_length=100)
     host = models.CharField(max_length=100)
     body = RichTextUploadingField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
     expiration_date = models.DateTimeField()
-    
+    extra_img = models.ImageField(blank=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['-created_at',]

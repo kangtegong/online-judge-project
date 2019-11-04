@@ -12,6 +12,7 @@ urlpatterns = [
     path('myclass/', views.myclass, name="myclass"),
 
     path('calendar/', views.calendar, name="calendar"),
+    path('event/<int:event_pk>', views.event, name="event"),
     path('mycode/', views.mycode, name="mycode"),
     
 ]

@@ -17,15 +17,17 @@
                   <thead>
 
                     <tr>
-                      <th width="35%">제목</th>
+                      <th width="40%">제목</th>
                       <th width="25%">모집기한</th>
                     </tr>
                   </thead>
                   <tbody>
+                    {% for ex in extra %}
                     <tr>
-                      <td>이름</td>
-                      <td>모집기한</td>
+                      <td><a href="{% url 'event' ex.pk %}">{{ex.title}}</a></td>
+                      <td>{{ex.expiration_date}}</td>                      
                     </tr>
+                    {% endfor %}
                   </tbody>
                 </table>
 
