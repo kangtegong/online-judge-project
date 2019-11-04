@@ -56,6 +56,7 @@ class FileSubmits(LoginRequiredMixin, CreateView):
     redirect_field_name = '/'
     model = FileSubmit
     template_name = 'homework/file.html'
+    
     fields = ['assignment','title', 'myfile', 'body']
     success_url = reverse_lazy('courselist')
     
@@ -99,6 +100,7 @@ class SubmitList(ListView):
         context['assignment'] = Assignment.objects.all()
         return context
 '''
+
 class ClassRegister(LoginRequiredMixin, ListView):
     login_url = '/'
     redirect_field_name = '/'

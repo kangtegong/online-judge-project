@@ -21,8 +21,7 @@
                   </thead>
                   <tbody>
                   <!-- 제출과제 목록 -->
-                  이 두 개가 같으면 될 듯 {{assignment.title}} | {% for submit in submitfiles %} {{submit.assignment.title}} {%endfor %}
-                       {% for submit in submitfiles %}
+                  {% for submit in submitfiles %}
                    <tr> 
                     {% if user.group == "Student" %}
                         {% if assignment.title == submit.assignment.title %}
@@ -45,12 +44,11 @@
                       <td>{{submit.created_at }}  </td>
                         {% endif %}
                     {% endif %}                    
-
-                        {% endfor %}
                     </tr>
+                  {% endfor %}
                                               
                     <!-- 코드 과제 목록-->    
-                        {% for submit in codefiles %}  
+                  {% for submit in codefiles %}  
                     <tr>
                     {% if user.group == "Student" %}
                         {% if assignment.title == submit.assignment.title %}                      
@@ -73,10 +71,8 @@
                       <td>{{submit.created_at }}  </td>
                       {% endif %}
                     {% endif %}                    
-
-
-                        {% endfor %}
                     </tr>
+                  {% endfor %}
 
                     </tr>              
                   </tbody>

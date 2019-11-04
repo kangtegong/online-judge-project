@@ -11,7 +11,7 @@
             <input type="radio" name="radio-buttons" id="img-1" checked />
             <li class="slide-container">
                 <div class="slide-image">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Timisoara_-_Regional_Business_Centre.jpg">
+                    <img src="https://scontent-icn1-1.xx.fbcdn.net/v/t31.0-8/12657187_933112380118826_7011853032506758798_o.jpg?_nc_cat=101&_nc_oc=AQlEgFFFugHOknFvNUGW8Kyh7SHXShOCndwOBkdx-aTMuafPE02uv5ulI8vrFopF6DA&_nc_ht=scontent-icn1-1.xx&oh=9bdd53fed81394073ca43ba6b60299fe&oe=5E64DEDB">
                 </div>
                 <div class="carousel-controls">
                     <label for="img-3" class="prev-slide">
@@ -86,7 +86,7 @@
                 {% for note in notice %}
                   {% if forloop.counter <= 5 %}
                 <tr>
-                  <td>{{note.title}}</td>
+                  <td><a href = "{% url 'note_detail' note.id %}" >{{note.title}}</a></td>
                   <td>{{note.date}}</td>
                 </tr>
                   {% endif %}
@@ -112,7 +112,7 @@
                   {% if forloop.counter <= 5 %}
                 <tr>
                   <td>{{assignments.class_choice.subject_nm}}</td>
-                  <td>{{assignments.title}}</td>
+                  <td><a href = "{% url 'hwdetail' assignments.pk %}" >{{assignments.title}}</a></td>
                 </tr>
                   {% endif %}
                 {% endfor %}
@@ -189,7 +189,7 @@
     <article><img src="images/demo/100x100.png" alt="">
       <h6 class="heading font-x1">About This Project</h6>
       <blockquote>In eu tortor nisi curabitur quis dui nam bibendum lectus diam dictum tincidunt ullamcorper dui et ante venenatis euismod aenean quis vulputate velit elit dolor eget.</blockquote>
-      <a class="btn" href="#">More</a>
+      <a class="btn" href="https://github.com/kangtegong/online-judge-project/blob/master/README.md#url-snapshot-based-online-ide">More</a>
       <em>Kang Minchul</em></article>
     <!-- ################################################################################################ -->
   </div>
