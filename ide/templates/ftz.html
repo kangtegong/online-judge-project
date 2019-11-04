@@ -88,6 +88,7 @@
     copyText.select();
     document.execCommand("Copy");
     alert("URL SnapShot Complete: " + copyText.value);
+    toggletext();
   }
 
 
@@ -110,22 +111,18 @@
         </li>
         <a id="apiLink" target="_blank" href=""></a>      
       </ul>
-      <div class="navbar-form navbar-left">
-          <a href="{% url 'codesave' %}" id='demo' style='display: none'>
-            <button class="btn btn btn-primary" >
-              <span aria-hidden="true"></span> 저장
-            </button>
-          </a>
-          <div class="topbar-divider d-none d-block"></div>          
-      </div>
 
       <div class="navbar-form navbar-right">
         <div class="input-group">
           <div class="input-group-btn">
-            <button class="btn btn-default" data-toggle="tooltip" data-placement="bottom">
-              <i class="fa fa-camera" onclick="copy_to_clipboard()" data-toggle="tooltip" data-placement="bottom" title="URL SnapShot"> copy</i>
+            <button class="btn btn-default" id="saveBtn" data-toggle="tooltip" data-placement="bottom" title="create URL">
+              <i class="fa fa-plus-circle"></i> (Ctrl+S)
             </button>
 
+            <button class="btn btn-default" onclick="copy_to_clipboard()" data-toggle="tooltip" data-placement="bottom">
+              <i class="fa fa-camera" data-toggle="tooltip" data-placement="bottom" title="URL SnapShot"></i>
+            </button>
+            
             <button class="btn btn-default" data-toggle="tooltip" data-placement="bottom">
               <i class="fas fa-file-download fa-1x" id="downloadSourceBtn" data-toggle="tooltip" data-placement="bottom" title="Download source"></i>
             </button>
@@ -178,19 +175,19 @@
         </div>
         
         <div class="vertical-spacer"></div>
-                    <button class="btn btn btn-success" id="runBtn" data-loading-text="Running...">
+            <button class="btn btn btn-success" id="runBtn" data-loading-text="Running...">
               <span class="glyphicon glyphicon-play" aria-hidden="true"></span> Run (F9)
             </button>
      
-            <button class="btn btn btn-primary" id="saveBtn" data-loading-text="Saving..." onclick="toggleText()">
-              <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> 임시저장
-            </button>
+            <a href="{% url 'codesave' %}">
+              <button class="btn btn btn-primary" id="demo" data-loading-text="Saving..."> 
+                <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save
+              </button>
+            </a>
             <div class="topbar-divider d-none d-block"></div>
-           <div class="topbar-divider d-none d-block"></div>
         </div>
         <!-- save 버튼을 누르면 나타나게끔 하기 그 때의 url 함께 제출 -->
        
-        <div class="topbar-divider d-none d-block"></div>
           
           
   </nav>
@@ -229,7 +226,7 @@
           © 2017-2019 <a href="https://judge0.com">Judge0</a>,
           Powered by <a href="https://api.judge0.com">Judge0 API</a>,
           Available on <a href="https://github.com/judge0/ide">GitHub</a>
-          <input type="text" id="myText" value ="copy url" size="1">
+          <input type="text" id="myText" value ="copy url" size="1" >
         </p>
       </div>
     </div>
