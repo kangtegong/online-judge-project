@@ -1,7 +1,5 @@
 Django==2.0
 Pillow==6.1.0
-django-phonenumber-field==3.0.1
-phonenumbers==8.10.17
 selenium==3.141.0
 requests==2.22.0
 beautifulsoup4==4.8.0

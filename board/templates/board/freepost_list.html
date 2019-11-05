@@ -16,7 +16,6 @@
                       <th width="17%">작성자</th>
                       <th width="25%">작성일</th>
                       <th width="7%">조회수</th>
-                      <th width="7%">Likes</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -26,7 +25,6 @@
                       <td>{{freepost.author}}</td>
                       <td>{{freepost.created_at}}</td>
                       <td>{% get_hit_count for freepost %}</td>
-                      <td>좋아요</td>
                     </tr>
                     {% endfor %}
                   </tbody>

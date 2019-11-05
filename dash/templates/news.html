@@ -13,16 +13,17 @@
             {% for data in api.Data %}
             {% if forloop.counter|divisibleby:4 %}
             <li class="one_quarter first">
-                <a>
+                <a href="{{data.url}}">
                     <img src="{{data.imageurl}}" alt="{{ data.source }}">
                     <h6>{{ data.title }}</h6>
                     <p> {{ data.body|truncatechars:50 }} </p>
                 </a>
                 <button href="{{data.url}}">More</button>
             </li>
+
             {% else %}
             <li class="one_quarter">
-                <a>
+                <a href="{{data.url}}">
                     <img src="{{data.imageurl}}" alt="{{ data.source }}">
                     <h6>{{ data.title }}</h6>
                     <p> {{ data.body|truncatechars:50 }} </p>

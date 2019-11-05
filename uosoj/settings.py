@@ -11,9 +11,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'e=0o@dl0@m7_a%i-&4chl1*iq10_vbacwzbhi&y^!p)le!0*(3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -31,14 +31,12 @@ INSTALLED_APPS = [
     'dash', # 메인페이지
     'board', # 게시판
     'overview',
-    'phonenumber_field',
     'django_truncate',
     'ckeditor',
     'ckeditor_uploader',
     'homework',
     'hitcount',
     'django.contrib.sites',
-#    'disqus',
     'django_comments_xtd',
     'django_comments',
 ]
