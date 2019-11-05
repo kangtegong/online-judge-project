@@ -1,5 +1,5 @@
 Django==2.0
-Pillow==6.1.0
+Pillow==6.2.0
 selenium==3.141.0
 requests==2.22.0
 beautifulsoup4==4.8.0
