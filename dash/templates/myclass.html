@@ -1,14 +1,13 @@
-{% extends 'userbase.html' %}
-{% block usercontent %}
-                <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">My Class</h1>
-                  </div>
-                  <br/>
-                  {% for class in user.myclass.all %}
-                    <h6>{{class}}</h6>
-                  {%endfor%}
+{% extends 'base.html' %}
+{% block content %}
+<main class="hoc container clear"> 
+  <h1>My Class</h1>
+    {% for class in user.myclass.all %}
+      <h6>{{class}}</h6>
+    {%endfor%}
+    <hr>
 
-                  <hr>
+    <a href="{% url 'index' %}">back to home</a>
+
+</main>
 {% endblock %}
-           
