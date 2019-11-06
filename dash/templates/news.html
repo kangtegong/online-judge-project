@@ -18,7 +18,6 @@
                     <h6>{{ data.title }}</h6>
                     <p> {{ data.body|truncatechars:50 }} </p>
                 </a>
-                <button href="{{data.url}}">More</button>
             </li>
 
             {% else %}
@@ -28,7 +27,6 @@
                     <h6>{{ data.title }}</h6>
                     <p> {{ data.body|truncatechars:50 }} </p>
                 </a>
-                <button href="{{data.url}}">More</button>
             </li>
             {% endif %}
             {% endfor %}
