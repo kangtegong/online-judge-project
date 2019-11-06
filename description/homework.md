@@ -1,3 +1,10 @@
+# 모델 설계 
+
+Course : API를 통해 DB에 저장된 수업 목록
+Assignment : 지정된 수업에서 만들어진 과제
+FileSubmit : 학생들이 제출하는 제출 과제
+CodeSubmit : 학생들이 제출하는 코딩 과제
+
 ```
 homework/models.py/
 
