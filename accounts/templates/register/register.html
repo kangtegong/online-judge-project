@@ -1,80 +1,96 @@
+{% load staticfiles %}
 <!DOCTYPE html>
+<!--
+Template Name: Jovaphile
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
 <html lang="ko">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 
 <head>
+    <title>UOS-OJ</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Online Judge - Register</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="/static/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/static/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/static/layout/styles/caraslide.css" rel="stylesheet" type="text/css" media="all">
 </head>
-<body class="bg-gradient-dark">
 
-  <div class="container">
-    <div class="card o-hidden border-0 shadow-lg my-5">
-      <div class="card-body p-0">
-        <!-- Nested Row within Card Body -->
-        <div class="row">
-          <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
-          <div class="col-lg-7">
-            <div class="p-5">
-              <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
-              </div>
+<body id="top">
 
-            <form action ="" method ="post" class="user">
-            {%csrf_token%}
-                <input type="text" class="form-control form-control-user" name="realname" required id="id_realname" placeholder="Name" /> <br/>
-                <input type="text" class="form-control form-control-user" name="username" required id="id_username" placeholder="ID" /> <br/>
-                <input type="email" class="form-control form-control-user" name="email" required id="id_email" placeholder="E-mail" /> <br/>
-                <input type="password" class="form-control form-control-user" name="password" required id="id_password" placeholder="Password"/> <br/>
-                <input type="password" class="form-control form-control-user" name="password2" required id="id_password2" placeholder="Password Confirm"/> 
-                <hr>
-                <div class="input-group mb-3">
-                    <select name="group" class="custom-select" required id="id_group">
-                        <option selected disabled>Select Group</option>
-                        <option value="Student">Student</option>
-                        <option value="Professor">Professor</option>
-                        <option value="Guest">Guest</option>
-                    </select>
-                </div>
-                <hr>
+    <div class="wrapper bgded overlay light" style="background-image:url('images/demo/backgrounds/01.png');">
 
-                <input type="submit" value="Register" class="btn btn-dark btn-user btn-block">
-
-            </form>            
-              <hr>
-              <div class="text-center">
-                <a class="small" href="/">Already have an account? Login!</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
+    <div class="wrapper row3">
 
-  </div>
+        <!--##################################################-->
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="/static/vendor/jquery/jquery.min.js"></script>
-  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <main class="hoc container clear">
+            <div id="comments">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                            </div>
 
-  <!-- Core plugin JavaScript-->
-  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+                            <form action="" method="post" class="user">
+                                {%csrf_token%}
+                                <input type="text" class="form-control form-control-user" name="realname" required id="id_realname" placeholder="Name" />
+                                <br/>
+                                <input type="text" class="form-control form-control-user" name="username" required id="id_username" placeholder="ID" />
+                                <br/>
+                                <input type="email" class="form-control form-control-user" name="email" required id="id_email" placeholder="E-mail" />
+                                <br/>
+                                <input type="password" class="form-control form-control-user" name="password" required id="id_password" placeholder="Password" />
+                                <br/>
+                                <input type="password" class="form-control form-control-user" name="password2" required id="id_password2" placeholder="Password Confirm" />
+                                <hr><br/>
+                                <div class="input-group mb-3">
+                                    <select name="group" class="custom-select" required id="id_group">
+                                        <option selected disabled>Select Group</option>
+                                        <option value="Student">Student</option>
+                                        <option value="Professor">Professor</option>
+                                        <option value="Guest">Guest</option>
+                                    </select>
+                                </div>
+                                <hr><br/>
 
-  <!-- Custom scripts for all pages-->
-  <script src="/static/js/sb-admin-2.min.js"></script>
+                                <input type="submit" value="Register" class="btn btn-dark btn-user btn-block">
 
+                            </form>
+                            <hr>
+                            <div class="text-center">
+                                <a class="small" href="/">Already have an account? Login!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--######################################-->
+
+    </div>
+    <!-- ################################################################################################ -->
+    <div class="wrapper row5">
+        <div id="copyright" class="hoc clear">
+            <!-- ################################################################################################ -->
+            <p class="fl_left">Copyright &copy; 2019 - All Rights Reserved - <a href="https://github.com/kangtegong">Kang Minchul</a></p>
+            <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+            <!-- ################################################################################################ -->
+        </div>
+    </div>
+    <!-- ################################################################################################ -->
+    <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JAVASCRIPTS -->
+    <script src="/static/layout/scripts/jquery.min.js"></script>
+    <script src="/static/layout/scripts/jquery.backtotop.js"></script>
+    <script src="/static/layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 
 </html>
