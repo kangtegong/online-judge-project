@@ -1,11 +1,10 @@
 # ide 
 
+API를 받아오는 BASE url은 다음과 같이 지정한다.
+
 ```
 var BASE_URL = localStorageGetItem("baseUrl") || "https://api.judge0.com";
 var PB_URL = "https://pb.judge0.com";
-var SUBMISSION_CHECK_TIMEOUT = 10; // in ms
-var WAIT = localStorageGetItem("wait") == "true";
-
 ```
 
 # source download
@@ -32,6 +31,8 @@ function download(data, strFileName, strMimeType) {
 ```
 
 # url create
+
+사용자가 입력한 입력값을 바탕으로 JSON.stringify 적용
 ```
 function save() {
   var content = JSON.stringify({
@@ -39,13 +40,13 @@ function save() {
     stdin: encode(inputEditor.getValue()),
     language_id: $selectLanguageBtn.val()
   });
-  var filename = "judge0-ide.json";
+  var filename = "judge0-ide.json";     // 넘겨줄 json 파일 이름
   var data = {
     content: content,
     filename: filename
   };
 
-  $saveBtn.button("loading");
+  $saveBtn.button("loading");       // 세이브 버튼 로딩 화면 
   $.ajax({
     url: PB_URL,
     type: "POST",
