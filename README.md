@@ -39,10 +39,14 @@ Source Code를 입력 및 실행할 수 있고, 10개 이상의 언어와 소스
  
 컴퓨터과학부는 과 특성상 코드를 제출하는 과제가 많습니다. 하지만 기존에 학우들이 사용하던 [에듀클래스]에는 소스코드를 업로드할 수 없고, 업로드한 파일 형식에 맞지 않게 다운로드 되는 문제가 있었습니다. 그래서 [에듀클래스]를 아예 이용하지 않거나, 교수님들 별로 각기 다른 과제/공지사항 플랫폼을 마련하는 경우도 있어 왔습니다. 
 
-![현황](accounts/static/css/current.png)
+
 기존 플랫폼의 업로드 이슈
-![현황2](accounts/static/css/current2.png)
+
+<img src="accounts/static/css/current.png" width="50%">
+
 수업 별 다른 플랫폼 이용 사례
+
+<img src="accounts/static/css/current2.png" width="50%">
 
 또한, 코드를 제출하는 과제는 일반 문서(보고서)를 제출하는 과제와는 달리 다음과 같은 특수성이 있습니다. 
  
