@@ -107,10 +107,38 @@ $ python manage.py collectstatic
 
 ## 기능
 
+아래 시연 영상으로 대체
+
 [시연영상모음](https://github.com/kangtegong/online-judge-project/blob/master/demo/demo.md#%EC%8B%9C%EC%97%B0-%EC%98%81%EC%83%81
 )
 
 ## 설계
+
+### Used API
+- 서울시립대학교 OPEN API
+- DOM judge API
+- judge0 API
+- Google Calendar
+
+### Backend
+- django
+- django rest framework
+
+### Frontend
+- Bootstrap
+- JS (JQuery)
+
+### Database
+- AWS RDS
+- (Github) SQLite3
+
+### Overview
+
+![overview](accounts/static/css/overview.png)
+
+### DB 설계
+
+![DB설계](accounts/static/css/selection.png)
 
 ## 한계
 
