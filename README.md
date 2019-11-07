@@ -20,10 +20,11 @@ Source Code를 입력 및 실행할 수 있고, 10개 이상의 언어와 소스
 
 1. [개발배경](https://github.com/kangtegong/online-judge-project#%EA%B0%9C%EB%B0%9C%EB%B0%B0%EA%B2%BD)
 2. [개발효과](https://github.com/kangtegong/online-judge-project#%EA%B0%9C%EB%B0%9C%ED%9A%A8%EA%B3%BC)
-3. 설치
+3. [설치]()
 4. [기능](https://github.com/kangtegong/online-judge-project#%EA%B8%B0%EB%8A%A5)
 5. [설계](https://github.com/kangtegong/online-judge-project#%EC%84%A4%EA%B3%84)
-6. [한계 및 후기](https://github.com/kangtegong/online-judge-project#%ED%95%9C%EA%B3%84)
+6. [한계](https://github.com/kangtegong/online-judge-project#%ED%95%9C%EA%B3%84)
+7. [후기](https://github.com/kangtegong/online-judge-project#%ED%9B%84%EA%B8%B0)
 
 ## 개발배경
 
@@ -84,6 +85,8 @@ Source Code를 입력 및 실행할 수 있고, 10개 이상의 언어와 소스
 하지만, UOS-OJ를 이용한다면, QnA에 대한 답변조차도 질문자와 답변자가 URL을 남겨주기만 하면 바로 실행가능/다운로드 가능한 소스코드를 주는 셈이 됩니다.
 
 ![개발효과](accounts/static/css/효과.png)
+
+## 설치
 
 ## 기능
 
