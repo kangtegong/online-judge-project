@@ -88,6 +88,21 @@ Source Code를 입력 및 실행할 수 있고, 10개 이상의 언어와 소스
 
 ## 설치
 
+관련 파일 설치
+```
+$ pip insatll requirements.txt
+```
+
+수업목록, 공지사항 등 자동 DB 저장
+```
+$ python note_class_parser.py
+```
+
+(옵션) static 파일 모으기
+```
+$ python manage.py collectstatic
+```
+
 ## 기능
 
 [시연영상모음](https://github.com/kangtegong/online-judge-project/blob/master/demo/demo.md#%EC%8B%9C%EC%97%B0-%EC%98%81%EC%83%81
