@@ -23,7 +23,7 @@ Source Code를 입력 및 실행할 수 있고, 10개 이상의 언어와 소스
 3. [기능](https://github.com/kangtegong/online-judge-project#%EA%B8%B0%EB%8A%A5)
 4. [설계](https://github.com/kangtegong/online-judge-project#%EC%84%A4%EA%B3%84)
 5. [한계](https://github.com/kangtegong/online-judge-project#%ED%95%9C%EA%B3%84)
-6. [후기]
+6. [후기](https://github.com/kangtegong/online-judge-project#%ED%9B%84%EA%B8%B0)
 
 ## 개발배경
 
