@@ -19,10 +19,11 @@ Source Code를 입력 및 실행할 수 있고, 10개 이상의 언어와 소스
 ## 목차
 
 1. [개발배경](https://github.com/kangtegong/online-judge-project#%EA%B0%9C%EB%B0%9C%EB%B0%B0%EA%B2%BD)
-2. 개발효과
-3. 기능
-4. 설계
-5. 한계
+2. [개발효과](https://github.com/kangtegong/online-judge-project#%EA%B0%9C%EB%B0%9C%ED%9A%A8%EA%B3%BC)
+3. [기능](https://github.com/kangtegong/online-judge-project#%EA%B8%B0%EB%8A%A5)
+4. [설계](https://github.com/kangtegong/online-judge-project#%EC%84%A4%EA%B3%84)
+5. [한계](https://github.com/kangtegong/online-judge-project#%ED%95%9C%EA%B3%84)
+6. [후기]
 
 ## 개발배경
 
@@ -91,3 +92,4 @@ Source Code를 입력 및 실행할 수 있고, 10개 이상의 언어와 소스
 ## 한계
 단독개발에 개발기간이 부족해서 프론트가 엉망이다.
 
+## 후기
