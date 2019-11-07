@@ -28,7 +28,7 @@ Source Code를 입력 및 실행할 수 있고, 10개 이상의 언어와 소스
 
 ## 개발배경
 
-### University of Seoul Online Judge (이하 UOS-OJ)의 실용적 목적과 연구 가치 
+### University of Seoul Online Judge (이하 UOS-OJ)의 실용적 가치와 연구 가치 
  
 실용성이 떨어지는 프로젝트는 개발의 가치가 없고, 연구 가치가 없는 프로젝트는 양산형에 불과합니다. 따라서 본 프로젝트는 아래와 같은 실용적 목적과 연구적 가치를 모두 달성하기 위해 만들어졌습니다. 
  
