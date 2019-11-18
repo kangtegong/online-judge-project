@@ -146,12 +146,6 @@ $ python manage.py collectstatic
 
 ![DB설계](accounts/static/css/selection.png)
 
-### 주요 코드 해설
-
-1. [계정관리](https://github.com/kangtegong/online-judge-project/blob/master/description/accounts.md)
-2. [IDE](https://github.com/kangtegong/online-judge-project/blob/master/description/oj.md)
-3. [QnA](https://github.com/kangtegong/online-judge-project/blob/master/description/qna.md)
-4. [과제 제출](https://github.com/kangtegong/online-judge-project/blob/master/description/homework.md)
 
 ## 한계
 
