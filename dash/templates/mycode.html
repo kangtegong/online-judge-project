@@ -1,14 +1,15 @@
-{% extends 'userbase.html' %}
-{% block usercontent %}
-<div class="p-5">
-  <div class="text-center">
-    <h1 class="h4 text-gray-900 mb-4">My Code</h1>
-  </div><br/>
+{% extends 'base.html' %}
+{% block content %}
+<main class="hoc container clear"> 
+  <h1>My Code</h1>
     {% for code in codes %}
       {% if code.user == request.user %}
       <a href="{{code.mycode}}">{{code.title}}</a><br/>
       {% endif %}
     {%endfor%}
     <hr>
+
+    <a href="{% url 'index' %}">back to home</a>
+
+</main>
 {% endblock %}
-           

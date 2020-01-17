@@ -7,7 +7,7 @@ from homework.models import Course
 import requests
 from xml.etree import ElementTree as ET
 
-
+# 시립대 API 받아오기
 def note_get():
     URL = 'http://wise.uos.ac.kr/uosdoc/api.ApiApiMainBd.oapi'
 

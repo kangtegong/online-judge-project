@@ -1,18 +1,14 @@
-{% extends 'userbase.html' %}
-{% block usercontent %}
-                <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Profile</h1>
-                  </div>
-                    <h6>ID : {{user.username}}</h6>
-                    <h6>이름 : {{user.realname}}</h6>
-                    <h6>email : {{user.email}}</h6>
-                    <h6>group : {{user.group}}</h6>
+{% extends 'base.html' %}
+{% block content %}
+<main class="hoc container clear"> 
+  <h1 class="h4 text-gray-900 mb-4">Profile</h1>
+    ID : {{user.username}}<br/><br/>
+    이름 : {{user.realname}}<br/><br/>
+    email : {{user.email}}<br/><br/>
+    group : {{user.group}}<br/><br/>
+    <hr>
 
-                    
+    <a href="{% url 'index' %}">back to home</a>
 
-               
-                   <br/><br/><br/><br/><br/>
-                  <hr>
+</main>
 {% endblock %}
-           

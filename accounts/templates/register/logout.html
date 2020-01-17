@@ -1,6 +1,9 @@
-로그아웃되었습니다.
-<br/>
-이용해주셔서 감사합니다 :)
-<br/><br/>
-
-<a href="{% url 'login'%}"> 로그인화면으로 </a>
+{% extends 'base.html' %}
+{% block content %}
+<main class="hoc container clear"> 
+  <h1>로그아웃 되었습니다.</h1>
+  <h1>이용해 주셔서 감사합니다</h1>
+  <hr>
+  <a href="{% url 'login'%}"> 로그인화면으로 </a>
+</main>
+{% endblock %}
